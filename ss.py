@@ -18,11 +18,11 @@ def calculate():
                 a = int(a_str)
                 b = int(b_str)
             except ValueError:
-                print("throws Exception // a и b должны быть целыми числами")
+                print("операнды должны быть целыми числами")
                 continue 
 
             if a < 1 or a > 10 or b < 1 or b > 10:
-                print("throws Exception // Числа должны быть от 1 до 10 включительно")
+                print("Числа должны быть от 1 до 10 включительно")
                 continue
 
             if op == '+':
