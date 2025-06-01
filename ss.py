@@ -10,18 +10,20 @@ def calculate():
 
             parts = s.split()
             if len(parts) != 3:
-                raise ValueError("Неверный формат ввода. Пример: 2 + 3")
+                print("Неверный формат ввода. Пример: 2 + 3")
+                continue
 
             a_str, op, b_str = parts
 
             try:
                 a = int(a_str)
                 b = int(b_str)
-            except ValueError("Операнды должны быть целыми числами")
-                continue 
+            except ValueError:
+                print("Операнды должны быть целыми числами")
+                continue
 
             if a < 1 or a > 10 or b < 1 or b > 10:
-            except ValueError("Числа должны быть от 1 до 10 включительно")
+                print("Числа должны быть от 1 до 10 включительно")
                 continue
 
             if op == '+':
@@ -31,7 +33,11 @@ def calculate():
             elif op == '*':
                 result = a * b
             elif op == '/':
-                result = a // b
+                try:
+                    result = a // b
+                except ZeroDivisionError:
+                    print("Ошибка: деление на ноль")
+                    continue
             else:
                 print("Неверный оператор. Допустимые: +, -, *, /")
                 continue
