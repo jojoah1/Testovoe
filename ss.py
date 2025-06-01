@@ -17,12 +17,11 @@ def calculate():
             try:
                 a = int(a_str)
                 b = int(b_str)
-            except ValueError:
-                print("операнды должны быть целыми числами")
+            except ValueError("Операнды должны быть целыми числами")
                 continue 
 
             if a < 1 or a > 10 or b < 1 or b > 10:
-                print("Числа должны быть от 1 до 10 включительно")
+            except ValueError("Числа должны быть от 1 до 10 включительно")
                 continue
 
             if op == '+':
